@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cairnmem"
+version = "0.1.0"
+description = "A verifiable memory layer for long-lived agents: keyword index, health lint, and an archive you can trace conclusions back to."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+keywords = ["memory", "retrieval", "agent", "provenance", "rag", "llm"]
+
+[project.scripts]
+cairn = "cairnmem.cli:main"
+
+[tool.setuptools]
+packages = ["cairnmem"]
+
+[tool.setuptools.package-data]
+cairnmem = ["data/*.txt"]
