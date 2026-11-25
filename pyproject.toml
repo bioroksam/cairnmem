@@ -11,6 +11,11 @@ requires-python = ">=3.9"
 license = { text = "MIT" }
 keywords = ["memory", "retrieval", "agent", "provenance", "rag", "llm"]
 
+[project.urls]
+Homepage = "https://github.com/bioroksam/cairnmem"
+Repository = "https://github.com/bioroksam/cairnmem"
+Issues = "https://github.com/bioroksam/cairnmem/issues"
+
 [project.scripts]
 cairn = "cairnmem.cli:main"
 

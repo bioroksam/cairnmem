@@ -2,6 +2,8 @@
 
 给**长期存在**的代理用的可验证记忆层。
 
+[cairnmem](https://github.com/bioroksam/cairnmem)
+
 三层：记忆存线索、知识库存已抽象过的全文、档案存原始材料。
 它不追求检索得更准，它只做一件事：**让每条结论都能回到原始材料**。
 
@@ -29,30 +31,31 @@ cairnmem 的应对不是更强的模型，是**分层**：
 
 ## 安装
 
-`@bash
-pip install cairnmem      # 尚未发布到 PyPI 时用：pip install -e .
-`@
+```bash
+pip install git+https://github.com/bioroksam/cairnmem
+# 本地开发：git clone 之后 pip install -e .
+```
 
 零运行时依赖，只要 Python >= 3.9。
 
 ## 三步跑起来
 
-`@bash
+```bash
 cairn init                      # 生成 cairn.json
 cairn index                     # 建索引
 cairn find "39 页 字数"          # 碎片 -> 全文
-`@
+```
 
 配置只有两件事：材料在哪、档案在哪。
 
-`@json
+```json
 {
   "workdir": "~/.cairn",
   "sources": [{ "kind": "markdown", "path": "~/notes" }],
   "archive": { "path": "~/corpus/plain.txt", "marker_regex": null },
   "scopes": { "thesis": ["毕业设计", "docx"] }
 }
-`@
+```
 
 ## 命令
 
